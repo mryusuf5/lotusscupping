@@ -1,0 +1,12 @@
+@import 'includes/variables.scss';
+@import 'includes/_includes.scss';
+@import "bootstrap-icons/font/bootstrap-icons.css";
+@import 'bootstrap';
+
+.cupping-image{
+    height: 827px;
+
+    @media (min-height: 768px) {
+        height: 400px;
+    }
+}

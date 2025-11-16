@@ -1,0 +1,154 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello PageController!{% endblock %}
+
+{% block body %}
+
+    {% include 'components/header.html.twig' with links %}
+
+
+    <div class="d-flex justify-content-center hero-container align-items-center py-5 my-5">
+        <div class="text-center hero">
+            <h1>Welkom bij Lotuss Cupping</h1>
+            <p>
+                Ontdek de helende kracht van cupping therapie in Hasselt. Bij Lotuss-Cupping bieden we professionele
+                massages die lichaam en geest in balans brengen. Laat de spanning los en ervaar de voordelen van deze
+                eeuwenoude techniek. We zijn blij je hier te verwelkomen op onze website.
+            </p>
+            <a href="#" class="btn btn-primary">Ontdek onze diensten</a>
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center py-5">
+        <div class="row justify-content-center" style="width: 1004px;">
+            <div class="text-primary col-md-6 col-10">
+                <h3>Waarom Lotuss Cupping?</h3>
+                <p>
+                    Bij Lotuss-Cupping streven we ernaar om jou de best mogelijke ervaring te bieden. Onze ervaren
+                    therapeuten luisteren naar je behoeften en passen de behandeling aan om optimaal resultaat te bereiken.
+                    Ervaar de voordelen van cupping en verbeter je welzijn.
+                </p>
+            </div>
+            <img class="object-fit-cover col-md-6 col-10" src="https://primary.jwwb.nl/pexels/11/11894617.jpeg" alt="">
+        </div>
+    </div>
+
+    <hr>
+
+    <div class="container my-5">
+        <div class="row justify-content-center g-2">
+            {% for card in cards %}
+                <div class="col-md-3 col-10">
+                    <div class="card service-card">
+                        <img src="{{ card.image }}" class="card-img-top" alt="">
+                        <div class="card-body d-flex flex-column">
+                            <h5 class="card-title">{{ card.title }}</h5>
+                            <p class="flex-grow-1">{{ card.body }}</p>
+                            <a href="#" class="btn btn-primary mt-auto">Boek nu</a>
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-center py-5">
+        <div class="row justify-content-center border border-1 border-primary">
+            <img class="object-fit-cover col-md-6 col-10 cupping-image" src="https://primary.jwwb.nl/pexels/98/9898741.jpeg" alt="">
+
+            <div class="text-primary col-md-4 col-10 d-flex flex-column justify-content-center">
+                <h3>Over lotuss-cupping</h3>
+                <p>
+                    Lotuss-Cupping is jouw adres voor professionele cupping therapie in Hasselt, België. We zijn
+                    gepassioneerd door het welzijn van onze klanten en streven ernaar om een ontspannende en helende
+                    ervaring te bieden. Onze ervaren therapeuten staan klaar om je te helpen bij het bereiken van een
+                    optimale gezondheid.
+                </p>
+                <a href="#" class="btn btn-primary">Neem contact op</a>
+            </div>
+            <div class="col-2 d-md-block d-none"></div>
+        </div>
+    </div>
+
+    <div class="bg-custom-secondary">
+        <div class="container d-flex flex-column align-items-center text-primary py-5 reviews-container">
+            <h2>Ervaar de voordelen zelf</h2>
+            <p class="text-center review-body">
+                Benieuwd naar wat cupping therapie voor jou kan betekenen? Maak vandaag nog een afspraak en ervaar
+                zelf de voordelen van deze eeuwenoude techniek. Bij Lotuss-Cupping ben je in goede handen.
+            </p>
+            <img class="mt-5 review-image" src="https://primary.jwwb.nl/pexels/83/8312822.jpeg?enable-io=true&crop=2.5%3A1&width=1920" alt="">
+            <hr>
+            <div class="row justify-content-center">
+                {% for review in reviews %}
+                <div class="col-md-4 col-10">
+                    <div class="card text-center">
+                        <div class="card-img-top d-flex justify-content-center">
+                            <div
+                                class="m-4 bg-primary"
+                                style="
+                                    width: 80px;
+                                    height: 80px;
+                                    padding: 12px;
+                                    -webkit-mask: url('https://assets.jwwb.nl/assets/img/icons/right-quotation-mark.svg') no-repeat center;
+                                    mask: url('https://assets.jwwb.nl/assets/img/icons/right-quotation-mark.svg') no-repeat center;
+                                    -webkit-mask-size: contain;
+                                    mask-size: contain;"></div>
+                        </div>
+                        <div class="card-body">
+                            <p>{{ review.body }}</p>
+                        </div>
+                        <span class="text-muted mb-4">{{ review.author }}</span>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6 col-10">
+                <h2>Neem contact met ons op</h2>
+                <form action="">
+                    <div class="mb-3">
+                        <label for="">Naam*</label>
+                        <input type="text" name="name" class="form-control bg-custom-secondary" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Email*</label>
+                        <input type="email" name="email" class="form-control bg-custom-secondary" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="">Bericht*</label>
+                        <textarea name="message" cols="30" rows="10" required class="form-control bg-custom-secondary"></textarea>
+                    </div>
+                    <input type="submit" class="btn btn-primary" value="Verzenden">
+                </form>
+            </div>
+            <div class="col-md-6 col-10">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2500.681020534042!2d6.0088854769501046!3d51.18810183397853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47c0b3540531d523%3A0xef6848089ff2072d!2sDonderbergweg%20105%2C%206043%20JB%20Roermond%2C%20Nederland!5e0!3m2!1snl!2sbe!4v1763330823465!5m2!1snl!2sbe" style="border:0; width: 100%; height: 400px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <h3>Locatie</h3>
+                <p>Mozartstraat 111 5701kx Roermond</p>
+                <div class="d-flex gap-2">
+                    <a href="#" target="_blank">
+                        <img height="40" width="40" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Instagram_icon.png/2048px-Instagram_icon.png" alt="">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <div class="container d-flex justify-content-between">
+        <h5 id="copyright"></h5>
+        <h5><a href="https://star-websolutions.nl/" target="_blank">Star-websolutions</a></h5>
+    </div>
+    <br>
+    <br>
+    <br>
+    <script>
+        let copy = document.querySelector('#copyright');
+        let now = new Date().getFullYear();
+        copy.innerHTML = '&copy; ' + now + ' Lotuss Cupping';
+    </script>
+{% endblock %}
