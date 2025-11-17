@@ -1,0 +1,12 @@
+.git
+.gitignore
+node_modules
+var
+vendor
+npm-debug.log
+Dockerfile
+Dockerfile.*
+README.md
+phpunit.xml
+.env.local
+.env.*.local
